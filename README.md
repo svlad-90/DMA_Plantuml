@@ -166,7 +166,9 @@ the method's definition. They will be added implicitly.
 
 ### Step 3 ( mandatory ). Somewhere in your code ( in non-global section ) call:
 
+```
 DMA::PlantUML::Creator::getInstance().initialize();
+```
 
 That will finish initialization of the model.
 
@@ -202,7 +204,7 @@ else
 
 ### Step 6 ( mandatory ). Add the following define to your build:
 
-> #define PUML_ENABLED
+> PUML_ENABLED
 
 Without it, all macro definitions which you've used will produce nothing.
 Sometimes ( in release builds ) this define can be turned off by purpose in
