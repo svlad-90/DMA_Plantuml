@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="554px" preserveAspectRatio="none" style="width:694px;height:554px;" version="1.1" viewBox="0 0 694 554" width="694px" zoomAndPan="magnify"><defs><filter height="300%" id="f1avlyysopjd7x" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c346f6553bf1feb4436d50721af4dc21]
+cluster test_helper--><polygon fill="#DDDDDD" filter="url(#f1avlyysopjd7x)" points="92.5,459,189.5,459,196.5,481.2969,672.5,481.2969,672.5,542,92.5,542,92.5,459" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="92.5" x2="196.5" y1="481.2969" y2="481.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="96.5" y="473.9951">test_helper</text><!--MD5=[408a9db973c348ecb0b52d1e5997f673]
+cluster test_main--><polygon fill="#DDDDDD" filter="url(#f1avlyysopjd7x)" points="146.5,6,230.5,6,237.5,28.2969,566.5,28.2969,566.5,412,146.5,412,146.5,6" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="146.5" x2="237.5" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="78" x="150.5" y="20.9951">test_main</text><!--MD5=[1ca65489d9a717d3ce67fecfdea6e3d1]
+class AggregationDependency--><rect fill="#FEFECE" filter="url(#f1avlyysopjd7x)" height="48" id="AggregationDependency" style="stroke: #A80036; stroke-width: 1.5;" width="182" x="265.5" y="486"/><ellipse cx="280.5" cy="502" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M283.4688,507.6406 Q282.8906,507.9375 282.25,508.0859 Q281.6094,508.2344 280.9063,508.2344 Q278.4063,508.2344 277.0859,506.5859 Q275.7656,504.9375 275.7656,501.8125 Q275.7656,498.6875 277.0859,497.0313 Q278.4063,495.375 280.9063,495.375 Q281.6094,495.375 282.2578,495.5313 Q282.9063,495.6875 283.4688,495.9844 L283.4688,498.7031 Q282.8438,498.125 282.25,497.8516 Q281.6563,497.5781 281.0313,497.5781 Q279.6875,497.5781 279,498.6484 Q278.3125,499.7188 278.3125,501.8125 Q278.3125,503.9063 279,504.9766 Q279.6875,506.0469 281.0313,506.0469 Q281.6563,506.0469 282.25,505.7734 Q282.8438,505.5 283.4688,504.9219 L283.4688,507.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="150" x="294.5" y="506.1543">AggregationDependency</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="266.5" x2="446.5" y1="518" y2="518"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="266.5" x2="446.5" y1="526" y2="526"/><!--MD5=[4d0301fc1de23dae2d36168d5052c656]
+class CompositionDependency--><rect fill="#FEFECE" filter="url(#f1avlyysopjd7x)" height="48" id="CompositionDependency" style="stroke: #A80036; stroke-width: 1.5;" width="182" x="482.5" y="486"/><ellipse cx="497.5" cy="502" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M500.4688,507.6406 Q499.8906,507.9375 499.25,508.0859 Q498.6094,508.2344 497.9063,508.2344 Q495.4063,508.2344 494.0859,506.5859 Q492.7656,504.9375 492.7656,501.8125 Q492.7656,498.6875 494.0859,497.0313 Q495.4063,495.375 497.9063,495.375 Q498.6094,495.375 499.2578,495.5313 Q499.9063,495.6875 500.4688,495.9844 L500.4688,498.7031 Q499.8438,498.125 499.25,497.8516 Q498.6563,497.5781 498.0313,497.5781 Q496.6875,497.5781 496,498.6484 Q495.3125,499.7188 495.3125,501.8125 Q495.3125,503.9063 496,504.9766 Q496.6875,506.0469 498.0313,506.0469 Q498.6563,506.0469 499.25,505.7734 Q499.8438,505.5 500.4688,504.9219 L500.4688,507.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="150" x="511.5" y="506.1543">CompositionDependency</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="483.5" x2="663.5" y1="518" y2="518"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="483.5" x2="663.5" y1="526" y2="526"/><!--MD5=[72a4d95edf5d9a5752e5471d46b9ea98]
+class IInterfaceHelper--><rect fill="#FEFECE" filter="url(#f1avlyysopjd7x)" height="48" id="IInterfaceHelper" style="stroke: #A80036; stroke-width: 1.5;" width="129" x="101" y="486"/><ellipse cx="116" cy="502" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M111.9219,497.7656 L111.9219,495.6094 L119.3125,495.6094 L119.3125,497.7656 L116.8438,497.7656 L116.8438,505.8438 L119.3125,505.8438 L119.3125,508 L111.9219,508 L111.9219,505.8438 L114.3906,505.8438 L114.3906,497.7656 L111.9219,497.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="97" x="130" y="506.1543">IInterfaceHelper</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="102" x2="229" y1="518" y2="518"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="102" x2="229" y1="526" y2="526"/><!--MD5=[e260b091d73f005fc9bbec51d6997402]
+class CImpl_Test--><rect fill="#FEFECE" filter="url(#f1avlyysopjd7x)" height="99.2188" id="CImpl_Test" style="stroke: #A80036; stroke-width: 1.5;" width="404" x="154.5" y="305"/><ellipse cx="319.25" cy="321" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M322.2188,326.6406 Q321.6406,326.9375 321,327.0859 Q320.3594,327.2344 319.6563,327.2344 Q317.1563,327.2344 315.8359,325.5859 Q314.5156,323.9375 314.5156,320.8125 Q314.5156,317.6875 315.8359,316.0313 Q317.1563,314.375 319.6563,314.375 Q320.3594,314.375 321.0078,314.5313 Q321.6563,314.6875 322.2188,314.9844 L322.2188,317.7031 Q321.5938,317.125 321,316.8516 Q320.4063,316.5781 319.7813,316.5781 Q318.4375,316.5781 317.75,317.6484 Q317.0625,318.7188 317.0625,320.8125 Q317.0625,322.9063 317.75,323.9766 Q318.4375,325.0469 319.7813,325.0469 Q320.4063,325.0469 321,324.7734 Q321.5938,324.5 322.2188,323.9219 L322.2188,326.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="339.75" y="325.1543">CImpl_Test</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="155.5" x2="557.5" y1="337" y2="337"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="155.5" x2="557.5" y1="345" y2="345"/><ellipse cx="165.5" cy="356" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="174.5" y="359.2104">CImpl_Test()</text><ellipse cx="165.5" cy="368.8047" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="126" x="174.5" y="372.0151">void myStaticMethod()</text><ellipse cx="165.5" cy="381.6094" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="378" x="174.5" y="384.8198">virtual void pureVirtFunc(const int&amp; val1, const int&amp; val2) override</text><ellipse cx="165.5" cy="394.4141" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="173" x="174.5" y="397.6245">virtual void virtFunc() override</text><!--MD5=[065ef51c0b83ac26c2e8b4ca504d0938]
+class IInterface--><rect fill="#FEFECE" filter="url(#f1avlyysopjd7x)" height="86.4141" id="IInterface" style="stroke: #A80036; stroke-width: 1.5;" width="376" x="168.5" y="33"/><ellipse cx="323.25" cy="49" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M319.1719,44.7656 L319.1719,42.6094 L326.5625,42.6094 L326.5625,44.7656 L324.0938,44.7656 L324.0938,52.8438 L326.5625,52.8438 L326.5625,55 L319.1719,55 L319.1719,52.8438 L321.6406,52.8438 L321.6406,44.7656 L319.1719,44.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="58" x="343.75" y="53.1543">IInterface</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="169.5" x2="543.5" y1="65" y2="65"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="169.5" x2="543.5" y1="73" y2="73"/><ellipse cx="179.5" cy="84" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="350" x="188.5" y="87.2104">virtual void pureVirtFunc(const int&amp; val1, const int&amp; val2) = 0</text><ellipse cx="179.5" cy="96.8047" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="121" x="188.5" y="100.0151">virtual void virtFunc()</text><ellipse cx="179.5" cy="109.6094" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="110" x="188.5" y="112.8198">virtual ~IInterface()</text><!--MD5=[2d4c8ec6db4049c384bcbe96911a10c1]
+class UndeclaredClass--><rect fill="#FEFECE" filter="url(#f1avlyysopjd7x)" height="48" id="UndeclaredClass" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="7" y="180"/><ellipse cx="22" cy="196" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M24.9688,201.6406 Q24.3906,201.9375 23.75,202.0859 Q23.1094,202.2344 22.4063,202.2344 Q19.9063,202.2344 18.5859,200.5859 Q17.2656,198.9375 17.2656,195.8125 Q17.2656,192.6875 18.5859,191.0313 Q19.9063,189.375 22.4063,189.375 Q23.1094,189.375 23.7578,189.5313 Q24.4063,189.6875 24.9688,189.9844 L24.9688,192.7031 Q24.3438,192.125 23.75,191.8516 Q23.1563,191.5781 22.5313,191.5781 Q21.1875,191.5781 20.5,192.6484 Q19.8125,193.7188 19.8125,195.8125 Q19.8125,197.9063 20.5,198.9766 Q21.1875,200.0469 22.5313,200.0469 Q23.1563,200.0469 23.75,199.7734 Q24.3438,199.5 24.9688,198.9219 L24.9688,201.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="99" x="36" y="200.1543">UndeclaredClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="137" y1="212" y2="212"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="137" y1="220" y2="220"/><!--MD5=[7eccc02d4f96a003130187b362b4bf23]
+reverse link IInterface to CImpl_Test--><path d="M356.5,139.398 C356.5,189.4769 356.5,258.3923 356.5,304.5943 " fill="none" id="IInterface&lt;-CImpl_Test" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="349.5001,139.2101,356.5,119.2101,363.5001,139.21,349.5001,139.2101" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="357.5" y="208.5669">implements</text><!--MD5=[882cbdf24b1bf45a4205af24ab85162a]
+reverse link IInterfaceHelper to CImpl_Test--><path d="M210.81,473.1115 C236.1386,452.4905 268.0471,426.5127 295.5413,404.1287 " fill="none" id="IInterfaceHelper&lt;-CImpl_Test" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="215.1576,478.5984,195.2283,485.7972,206.3186,467.7415,215.1576,478.5984" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="255.5" y="447.0669">implements</text><!--MD5=[228d59f7b257578b00fbffb66e13b5b5]
+reverse link UndeclaredClass to CImpl_Test--><path d="M135.5071,237.3893 C172.9136,257.2121 221.0461,282.719 262.8365,304.8649 " fill="none" id="UndeclaredClass&lt;-CImpl_Test" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="132.2089,243.5637,117.8147,228.0136,138.7644,231.1933,132.2089,243.5637" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="206.5" y="271.0669">extends</text><!--MD5=[cce8984bb659fda437a08aec58c975f6]
+reverse link CImpl_Test to AggregationDependency--><path d="M356.5,417.2053 C356.5,441.2221 356.5,467.2302 356.5,485.5842 " fill="none" id="CImpl_Test&lt;-AggregationDependency" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="356.5,404.1287,352.5,410.1287,356.5,416.1287,360.5,410.1287,356.5,404.1287" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="30" x="357.5" y="447.0669">uses</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="347.9375" y="424.2233">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="347.525" y="474.8878">1</text><!--MD5=[e13d0d88ff2fc99675849ca7a1c39849]
+reverse link CImpl_Test to CompositionDependency--><path d="M436.6444,411.9307 C472.2398,437.438 512.2141,466.0832 539.725,485.7972 " fill="none" id="CImpl_Test&lt;-CompositionDependency" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="425.7568,404.1287,428.3039,410.875,435.5109,411.1185,432.9638,404.3722,425.7568,404.1287" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="491.5" y="447.0669">contains</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="426.9335" y="424.2233">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="522.0452" y="474.7573">1</text><!--MD5=[153f3845851fc18cbce4cccaf8b5cd23]
+@startuml
+package "test_helper" #DDDDDD
+{
+
+class "AggregationDependency"
+{
+}
+
+class "CompositionDependency"
+{
+}
+
+interface "IInterfaceHelper"
+{
+}
+
+}
+
+package "test_main" #DDDDDD
+{
+
+class "CImpl_Test"
+{
+    + CImpl_Test()
+    + {static} void myStaticMethod()
+    + virtual void pureVirtFunc(const int& val1, const int& val2) override
+    + virtual void virtFunc() override
+}
+
+interface "IInterface"
+{
+    + {abstract} virtual void pureVirtFunc(const int& val1, const int& val2) = 0
+    + virtual void virtFunc()
+    + virtual ~IInterface()
+}
+
+}
+
+'====================Inheritance section====================
+IInterface <|- - CImpl_Test : implements
+IInterfaceHelper <|- - CImpl_Test : implements
+UndeclaredClass <|- - CImpl_Test : extends
+
+'====================Dependencies section====================
+CImpl_Test "1" o- - "1" AggregationDependency : uses
+CImpl_Test "1" *- - "1" CompositionDependency : contains
+@enduml
+
+@startuml
+package "test_helper" #DDDDDD
+{
+
+class "AggregationDependency"
+{
+}
+
+class "CompositionDependency"
+{
+}
+
+interface "IInterfaceHelper"
+{
+}
+
+}
+
+package "test_main" #DDDDDD
+{
+
+class "CImpl_Test"
+{
+    + CImpl_Test()
+    + {static} void myStaticMethod()
+    + virtual void pureVirtFunc(const int& val1, const int& val2) override
+    + virtual void virtFunc() override
+}
+
+interface "IInterface"
+{
+    + {abstract} virtual void pureVirtFunc(const int& val1, const int& val2) = 0
+    + virtual void virtFunc()
+    + virtual ~IInterface()
+}
+
+}
+
+IInterface <|- - CImpl_Test : implements
+IInterfaceHelper <|- - CImpl_Test : implements
+UndeclaredClass <|- - CImpl_Test : extends
+
+CImpl_Test "1" o- - "1" AggregationDependency : uses
+CImpl_Test "1" *- - "1" CompositionDependency : contains
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 11:39:45 UTC 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

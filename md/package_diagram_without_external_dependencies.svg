@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="429px" preserveAspectRatio="none" style="width:742px;height:429px;" version="1.1" viewBox="0 0 742 429" width="742px" zoomAndPan="magnify"><defs><filter height="300%" id="fa5gxk28ork9u" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c346f6553bf1feb4436d50721af4dc21]
+cluster test_helper--><polygon fill="#DDDDDD" filter="url(#fa5gxk28ork9u)" points="574.5,158,671.5,158,678.5,180.2969,720.5,180.2969,720.5,241,574.5,241,574.5,158" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="574.5" x2="678.5" y1="180.2969" y2="180.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="578.5" y="172.9951">test_helper</text><!--MD5=[408a9db973c348ecb0b52d1e5997f673]
+cluster test_main--><polygon fill="#DDDDDD" filter="url(#fa5gxk28ork9u)" points="146.5,6,230.5,6,237.5,28.2969,566.5,28.2969,566.5,417,146.5,417,146.5,6" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="146.5" x2="237.5" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="78" x="150.5" y="20.9951">test_main</text><!--MD5=[72a4d95edf5d9a5752e5471d46b9ea98]
+class IInterfaceHelper--><rect fill="#FEFECE" filter="url(#fa5gxk28ork9u)" height="48" id="IInterfaceHelper" style="stroke: #A80036; stroke-width: 1.5;" width="129" x="583" y="185"/><ellipse cx="598" cy="201" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M593.9219,196.7656 L593.9219,194.6094 L601.3125,194.6094 L601.3125,196.7656 L598.8438,196.7656 L598.8438,204.8438 L601.3125,204.8438 L601.3125,207 L593.9219,207 L593.9219,204.8438 L596.3906,204.8438 L596.3906,196.7656 L593.9219,196.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="97" x="612" y="205.1543">IInterfaceHelper</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="584" x2="711" y1="217" y2="217"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="584" x2="711" y1="225" y2="225"/><!--MD5=[e260b091d73f005fc9bbec51d6997402]
+class CImpl_Test--><rect fill="#FEFECE" filter="url(#fa5gxk28ork9u)" height="99.2188" id="CImpl_Test" style="stroke: #A80036; stroke-width: 1.5;" width="404" x="154.5" y="310"/><ellipse cx="319.25" cy="326" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M322.2188,331.6406 Q321.6406,331.9375 321,332.0859 Q320.3594,332.2344 319.6563,332.2344 Q317.1563,332.2344 315.8359,330.5859 Q314.5156,328.9375 314.5156,325.8125 Q314.5156,322.6875 315.8359,321.0313 Q317.1563,319.375 319.6563,319.375 Q320.3594,319.375 321.0078,319.5313 Q321.6563,319.6875 322.2188,319.9844 L322.2188,322.7031 Q321.5938,322.125 321,321.8516 Q320.4063,321.5781 319.7813,321.5781 Q318.4375,321.5781 317.75,322.6484 Q317.0625,323.7188 317.0625,325.8125 Q317.0625,327.9063 317.75,328.9766 Q318.4375,330.0469 319.7813,330.0469 Q320.4063,330.0469 321,329.7734 Q321.5938,329.5 322.2188,328.9219 L322.2188,331.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="339.75" y="330.1543">CImpl_Test</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="155.5" x2="557.5" y1="342" y2="342"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="155.5" x2="557.5" y1="350" y2="350"/><ellipse cx="165.5" cy="361" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="174.5" y="364.2104">CImpl_Test()</text><ellipse cx="165.5" cy="373.8047" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="126" x="174.5" y="377.0151">void myStaticMethod()</text><ellipse cx="165.5" cy="386.6094" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="378" x="174.5" y="389.8198">virtual void pureVirtFunc(const int&amp; val1, const int&amp; val2) override</text><ellipse cx="165.5" cy="399.4141" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="173" x="174.5" y="402.6245">virtual void virtFunc() override</text><!--MD5=[065ef51c0b83ac26c2e8b4ca504d0938]
+class IInterface--><rect fill="#FEFECE" filter="url(#fa5gxk28ork9u)" height="86.4141" id="IInterface" style="stroke: #A80036; stroke-width: 1.5;" width="376" x="168.5" y="33"/><ellipse cx="323.25" cy="49" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M319.1719,44.7656 L319.1719,42.6094 L326.5625,42.6094 L326.5625,44.7656 L324.0938,44.7656 L324.0938,52.8438 L326.5625,52.8438 L326.5625,55 L319.1719,55 L319.1719,52.8438 L321.6406,52.8438 L321.6406,44.7656 L319.1719,44.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="58" x="343.75" y="53.1543">IInterface</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="169.5" x2="543.5" y1="65" y2="65"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="169.5" x2="543.5" y1="73" y2="73"/><ellipse cx="179.5" cy="84" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="350" x="188.5" y="87.2104">virtual void pureVirtFunc(const int&amp; val1, const int&amp; val2) = 0</text><ellipse cx="179.5" cy="96.8047" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="121" x="188.5" y="100.0151">virtual void virtFunc()</text><ellipse cx="179.5" cy="109.6094" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="110" x="188.5" y="112.8198">virtual ~IInterface()</text><!--MD5=[2d4c8ec6db4049c384bcbe96911a10c1]
+class UndeclaredClass--><rect fill="#FEFECE" filter="url(#fa5gxk28ork9u)" height="48" id="UndeclaredClass" style="stroke: #A80036; stroke-width: 1.5;" width="131" x="7" y="185"/><ellipse cx="22" cy="201" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M24.9688,206.6406 Q24.3906,206.9375 23.75,207.0859 Q23.1094,207.2344 22.4063,207.2344 Q19.9063,207.2344 18.5859,205.5859 Q17.2656,203.9375 17.2656,200.8125 Q17.2656,197.6875 18.5859,196.0313 Q19.9063,194.375 22.4063,194.375 Q23.1094,194.375 23.7578,194.5313 Q24.4063,194.6875 24.9688,194.9844 L24.9688,197.7031 Q24.3438,197.125 23.75,196.8516 Q23.1563,196.5781 22.5313,196.5781 Q21.1875,196.5781 20.5,197.6484 Q19.8125,198.7188 19.8125,200.8125 Q19.8125,202.9063 20.5,203.9766 Q21.1875,205.0469 22.5313,205.0469 Q23.1563,205.0469 23.75,204.7734 Q24.3438,204.5 24.9688,203.9219 L24.9688,206.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="99" x="36" y="205.1543">UndeclaredClass</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="137" y1="217" y2="217"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="137" y1="225" y2="225"/><!--MD5=[7eccc02d4f96a003130187b362b4bf23]
+reverse link IInterface to CImpl_Test--><path d="M356.5,139.0714 C356.5,190.5677 356.5,262.3409 356.5,309.8216 " fill="none" id="IInterface&lt;-CImpl_Test" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="349.5001,139.0576,356.5,119.0575,363.5001,139.0575,349.5001,139.0576" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="357.5" y="213.5669">implements</text><!--MD5=[882cbdf24b1bf45a4205af24ab85162a]
+reverse link IInterfaceHelper to CImpl_Test--><path d="M583.2017,242.2539 C544.8361,262.0959 495.3901,287.6685 452.4721,309.8649 " fill="none" id="IInterfaceHelper&lt;-CImpl_Test" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="580.0879,235.9836,601.0684,233.0136,586.5193,248.4189,580.0879,235.9836" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="537.5" y="276.0669">implements</text><!--MD5=[228d59f7b257578b00fbffb66e13b5b5]
+reverse link UndeclaredClass to CImpl_Test--><path d="M135.5071,242.3893 C172.9136,262.2121 221.0461,287.719 262.8365,309.8649 " fill="none" id="UndeclaredClass&lt;-CImpl_Test" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="132.2089,248.5637,117.8147,233.0136,138.7644,236.1933,132.2089,248.5637" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="206.5" y="276.0669">extends</text><!--MD5=[aa66edd548f3ac440886ee58aa68b2c3]
+@startuml
+package "test_helper" #DDDDDD
+{
+
+interface "IInterfaceHelper"
+{
+}
+
+}
+
+package "test_main" #DDDDDD
+{
+
+class "CImpl_Test"
+{
+    + CImpl_Test()
+    + {static} void myStaticMethod()
+    + virtual void pureVirtFunc(const int& val1, const int& val2) override
+    + virtual void virtFunc() override
+}
+
+interface "IInterface"
+{
+    + {abstract} virtual void pureVirtFunc(const int& val1, const int& val2) = 0
+    + virtual void virtFunc()
+    + virtual ~IInterface()
+}
+
+}
+
+'====================Inheritance section====================
+IInterface <|- - CImpl_Test : implements
+IInterfaceHelper <|- - CImpl_Test : implements
+UndeclaredClass <|- - CImpl_Test : extends
+@enduml
+
+@startuml
+package "test_helper" #DDDDDD
+{
+
+interface "IInterfaceHelper"
+{
+}
+
+}
+
+package "test_main" #DDDDDD
+{
+
+class "CImpl_Test"
+{
+    + CImpl_Test()
+    + {static} void myStaticMethod()
+    + virtual void pureVirtFunc(const int& val1, const int& val2) override
+    + virtual void virtFunc() override
+}
+
+interface "IInterface"
+{
+    + {abstract} virtual void pureVirtFunc(const int& val1, const int& val2) = 0
+    + virtual void virtFunc()
+    + virtual ~IInterface()
+}
+
+}
+
+IInterface <|- - CImpl_Test : implements
+IInterfaceHelper <|- - CImpl_Test : implements
+UndeclaredClass <|- - CImpl_Test : extends
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 11:39:45 UTC 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

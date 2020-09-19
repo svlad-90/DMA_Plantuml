@@ -1,0 +1,37 @@
+@startuml
+
+package "test_helper" #DDDDDD
+{
+
+interface "IInterfaceHelper"
+{
+}
+
+}
+
+package "test_main" #DDDDDD
+{
+
+class "CImpl_Test"
+{
+    + CImpl_Test()
+    + {static} void myStaticMethod()
+    + virtual void pureVirtFunc(const int& val1, const int& val2) override
+    + virtual void virtFunc() override
+}
+
+interface "IInterface"
+{
+    + {abstract} virtual void pureVirtFunc(const int& val1, const int& val2) = 0
+    + virtual void virtFunc()
+    + virtual ~IInterface()
+}
+
+}
+
+'====================Inheritance section====================
+IInterface <|-- CImpl_Test : implements
+IInterfaceHelper <|-- CImpl_Test : implements
+UndeclaredClass <|-- CImpl_Test : extends
+
+@enduml
