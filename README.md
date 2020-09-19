@@ -154,7 +154,7 @@ searched by their names without considering name of the package. Thus, if
 you e.g. will have the package_1::class_1 and package_2::class_1, then dependency
 to class_1 might lead to ambiguation, when random class will be chosen.
 - All internal search functionality is CASE SENSITIVE. Thus, metadata
-declarations should also consider this. Only Creator::findPackagesByName does
+declarations should also consider this. Only Creator::findPackagesByName method does
 a case-insensitive search.
 - Be aware, that you will need a graphwiz installed in order to get plantuml
 class diagrams. It is better to install version 2.38 of it.
