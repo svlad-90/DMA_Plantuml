@@ -10,12 +10,12 @@
 
 Where am I?
 
-You are inside the header of the DMA_Plantuml concept - the poor man's C++
+You are on the page of the DMA_Plantuml project - the poor man's C++
 to platuml converter
 
-What it does? It allows you to declare a metadata for your classes, which is
-then allows your application to produce plantuml class diagrams regarding
-its own entities.
+What it does? It allows you to declare a metadata of your classes, which is
+then used to produce plantuml class diagrams. 
+In other words, with it your application starts to contain data regarding its own design.
 
 ## Motivation:
 
