@@ -149,10 +149,10 @@ quotes. Stringification will be done inside the macro definitions
 you to register some garbage. But from the other - it allows to create
 design for non-existing classes, which is useful.
 - It is better to specify class names with namespaces in order to avoid
-collisions between the entities. E.g. dependencies and inheritance are
+collisions between the entities. E.g. dependencies and inheritances are
 searched by their names without considering name of the package. Thus, if
-you will have the package_1::class_1 and package_2::class_1, then dependency
-to class_1 might lead to ambiguation, when random data will be chosen.
+you e.g. will have the package_1::class_1 and package_2::class_1, then dependency
+to class_1 might lead to ambiguation, when random class will be chosen.
 - All internal search functionality is CASE SENSITIVE. Thus, metadata
 declarations should also consider this. Only Creator::findPackagesByName does
 a case-insensitive search.
