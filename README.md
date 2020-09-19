@@ -15,7 +15,7 @@ to platuml converter
 
 What it does? It allows you to declare a metadata of your classes, which is
 then used to produce plantuml class diagrams. 
-In other words, with it your application starts to contain data regarding its own design.
+In other words, with DMA_Plantuml your application starts to contain information regarding its own design.
 
 ## Motivation:
 
@@ -45,8 +45,7 @@ filtering out the diagram based on certain package. You are able to request
 creation of diagram for the specified package and its nearest connections.
 
 As of now, this concept is manual, but, for sure, later on it can be used as
-a core module for a generator, which will produce the metadata macro-
-definitions on the fly.
+a core module for a generator, which will produce the metadata macro-definitions on the fly.
 
 General idea of this concept is to allow you to have UML data ( mainly class
 diagrams ) of your app at your fingertips. From my previous experience, the
