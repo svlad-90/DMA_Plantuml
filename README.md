@@ -10,12 +10,12 @@
 
 Where am I?
 
-You are inside the header of the DMA_Plantuml concept - the poor man's C++
+You are on the page of the DMA_Plantuml project - the poor man's C++
 to platuml converter
 
-What it does? It allows you to declare a metadata for your classes, which is
-then allows your application to produce plantuml class diagrams regarding
-its own entities.
+What it does? It allows you to declare a metadata of your classes, which is
+then used to produce plantuml class diagrams. 
+In other words, with DMA_Plantuml your application starts to contain information regarding its own design.
 
 ## Motivation:
 
@@ -46,8 +46,7 @@ filtering out the diagram based on certain package. You are able to request
 creation of diagram for the specified package and its nearest connections.
 
 As of now, this concept is manual, but, for sure, later on it can be used as
-a core module for a generator, which will produce the metadata macro-
-definitions on the fly.
+a core module for a generator, which will produce the metadata macro-definitions on the fly.
 
 General idea of this concept is to allow you to have UML data ( mainly class
 diagrams ) of your app at your fingertips. From my previous experience, the
@@ -171,7 +170,9 @@ TClass<T> ( where T is abstract template parameter ) definitely won't.
 
 ### Step 3 ( mandatory ). Somewhere in your code ( in non-global section ) call:
 
+```
 DMA::PlantUML::Creator::getInstance().initialize();
+```
 
 That will finish initialization of the model.
 
@@ -207,7 +208,7 @@ else
 
 ### Step 6 ( mandatory ). Add the following define to your build:
 
-> #define PUML_ENABLED
+> PUML_ENABLED
 
 Without it, all macro definitions which you've used will produce nothing.
 Sometimes ( in release builds ) this define can be turned off by purpose in
