@@ -1,7 +1,7 @@
 # DMA_Plantuml
 
 - Module:   DMA_Plantuml
-- Version:  1.0.1
+- Version:  1.0.2
 - Author:   Vladyslav Goncharuk ( svlad1990@gmail.com )
 
 ----
@@ -20,7 +20,8 @@ its own entities.
 ## Motivation:
 
 Firstly, as a developer I want documentation of my source code to be located
-as near as possible to the code itself.
+as near as possible to the code itself. Additionally, I do not want to
+maintain multiple non-connected diagrams, but rather a one single model.
 
 Secondly, I do not want to use existing tools, which are generating the
 diagrams during the build. Integration of such tools usually needs a lot of
@@ -137,33 +138,36 @@ package with dozens of files there is no need to have a seperate cpp in
 order to store the whole metadata of the package there. No! Idea is to
 declare metadata of the specific entities in their own cpp files. Even if
 multiple classes are related to the same package.
-- From the other side you can't split the definition of metadata for the
+- From the other side, you can't split the definition of metadata for the
 classes and interfaces. There should be only one definition of entity with
 its unique name within a package. In case of multiple definitions of an
 element the "last win" strategy will be applied. So you can get partial
 data ☺
-- Class has: methods, inheritance, dependencies
-- Interface has: methods, dependencies. No inheritance.
+- both class and interface do have: methods, inheritance and dependencies
 - All parameters of the macro definitions should be placed without the
 quotes. Stringification will be done inside the macro definitions
-- Concept does NOT contain a type check mechanism. From one side that allows
-you to register some garbage. But from the other - it allows to create
-design for non-existing classes, which is useful.
+- Concept does contain a primitive type check mechanism. Refer to X_CHECKED
+macro definitions. It's usage is optional, so, if needed, you can add to
+your design even non-yet-existing classes.
 - It is better to specify class names with namespaces in order to avoid
-collisions between the entities. E.g. dependencies and inheritance are
-searched by their names without considering name of the package. Thus, if
-you will have the package_1::class_1 and package_2::class_1, then dependency
-to class_1 might lead to ambiguation, when random data will be chosen.
+collisions between the entities. E.g. dependencies and inheritance lookup
+is using names without considering name of the packages. Thus, if you will
+have the package_1::class_1 and package_2::class_1, then dependency to
+class_1 might lead to ambiguation, when random data will be chosen.
 - All internal search functionality is CASE SENSITIVE. Thus, metadata
-declarations should also consider this. Only Creator::findPackagesByName does
-a case-insensitive search.
+declarations should also consider this. Only Creator::findPackagesByName
+method does a case-insensitive search of packages.
 - Be aware, that you will need a graphwiz installed in order to get plantuml
-class diagrams. It is better to install version 2.38 of it.
+class diagrams. It is better to install version 2.38 of it, as plantuml
+documentation states, that currently it is the most compatible release.
 - There is NO support of the nested packages, interfaces or classes. Only
 package->class and package->interface folding.
 - keywords virtual, override and "=0" should NOT be added together with
 the method's definition. They will be added implicitly.
-- Dependencies of class or interface to itself will be ignored.
+- Concept supports usage of template classes. But be aware, that X_CHECKED
+macro definitions will not fully work with it. TClass<int> might work, while
+TClass<T> ( where T is abstract template parameter ) definitely won't.
+- Concept supports declaration of singletone and abstract classes
 
 ### Step 3 ( mandatory ). Somewhere in your code ( in non-global section ) call:
 
@@ -297,6 +301,13 @@ CImpl_Test "1" -- "1" CompositionDependency : contains
 
 @enduml
 ```
+
+For more complex examples, please, visit [this project](https://github.com/svlad-90/DLT-Message-Analyzer).
+
+It's class-diagrams documentation is fully based on usage of this library: [section of DLT-Message-Analyzer's generated UML class-diagrams](https://github.com/svlad-90/DLT-Message-Analyzer/blob/master/md/dev_docs/dev_docs.md).
+
+Search for usage of this API within that repository, and you will get how to
+deal with it.
 
 ----
 
