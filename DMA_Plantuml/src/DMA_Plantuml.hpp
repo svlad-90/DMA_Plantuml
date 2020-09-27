@@ -9,7 +9,7 @@
 /**
  *
  * Module:   DMA_Plantuml
- * Version:  1.0.2
+ * Version:  1.0.3
  * Author:   Vladyslav Goncharuk ( svlad1990@gmail.com )
  *
  * ////////////////////////////////////////////////////////////////////////////
@@ -739,7 +739,7 @@ namespace DMA
 
         struct tClassData : public tBaseData
         {
-            virtual const eItemType& getType() const override;            
+            virtual const eItemType& getType() const override;
         };
 
         typedef std::shared_ptr<tClassData> tClassDataPtr;
