@@ -1,4 +1,6 @@
-# DMA_Plantuml
+![DMA_Plantuml logo](./md/DMA_Plantuml_logo.png)
+
+----
 
 - Module:   DMA_Plantuml
 - Version:  1.0.3
