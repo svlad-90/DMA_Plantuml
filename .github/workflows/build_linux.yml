@@ -1,0 +1,46 @@
+name: Build linux
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_linux:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Checkout project's revision, which is pushed
+    - name: Checkout of the project
+      uses: actions/checkout@v2
+      with:
+        repository: svlad-90/${{ github.event.repository.name }}
+        path: ./
+        ref: ${{ github.ref }}
+        
+    # Create build directory
+    - name: Creation of the "../build" directory
+      run: mkdir ../build
+      shell: bash
+      working-directory: ./
+
+    # CMake execution
+    - name: CMake
+      run: cmake ../${{ github.event.repository.name }}/DMA_Plantuml
+      shell: bash
+      working-directory: ../build
+    
+    # Build of the project
+    - name: Make
+      run: make -j8
+      shell: bash
+      working-directory: ../build
+
+    # Unit-tests execution
+    - name: unit-tests
+      run: make -j8 test
+      shell: bash
+      working-directory: ../build

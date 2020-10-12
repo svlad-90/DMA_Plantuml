@@ -1,5 +1,9 @@
 ![DMA_Plantuml logo](./md/DMA_Plantuml_logo.png)
 
+![Build linux](https://github.com/svlad-90/DMA_Plantuml/workflows/Build%20linux/badge.svg)
+![Build windows](https://github.com/svlad-90/DMA_Plantuml/workflows/Build%20windows/badge.svg)
+![Build clang-tidy](https://github.com/svlad-90/DMA_Plantuml/workflows/Build%20clang-tidy/badge.svg)
+
 ----
 
 - Module:   DMA_Plantuml
@@ -327,3 +331,11 @@ deal with it.
 ### Package diagram without external dependencies
 
 ![package_diagram_without_external_dependencies](./md/package_diagram_without_external_dependencies.svg)
+
+----
+
+## Repo size: 
+
+### [Read it here](./md/repo_size/repo_size.md)
+
+----
