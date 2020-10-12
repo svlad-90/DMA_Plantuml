@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <fstream>
+
 #include <gtest/gtest.h>
 
 #include "../src/DMA_Plantuml.hpp"
@@ -112,6 +115,96 @@ TEST_F(Test_CClassUnderTest, test_diagram_background_color)
 
     // we should find color
     ASSERT_NE(diagramResult.diagramContent.find("skinparam backgroundColor #FFFFFF"), std::string::npos);
+}
+
+static  bool checkFile(const std::string& filePath)
+{
+    bool bResult = false;
+
+    std::ifstream file;
+
+    try
+    {
+        file.open(filePath, std::ios::in);
+        bResult = file.is_open();
+        file.close();
+    }
+    catch (std::ios_base::failure&)
+    {
+        bResult = false;
+    }
+
+    return bResult;
+}
+
+static void removeFile(const std::string& filePath)
+{
+    static_cast<void>(std::remove(filePath.c_str()));
+}
+
+TEST_F(Test_CClassUnderTest, test_full_diagram_export)
+{
+    const std::string exportDir = "./";
+    auto exportResult = DMA::PlantUML::Creator::getInstance().exportClassDiagram(exportDir);
+    ASSERT_EQ(exportResult.bIsSuccessful, true);
+    ASSERT_EQ(exportResult.error.empty(), true);
+
+    auto filePath = exportDir + "Full.puml";
+    ASSERT_TRUE(checkFile( filePath ));
+    removeFile(filePath);
+}
+
+TEST_F(Test_CClassUnderTest, test_package_diagram_export)
+{
+    const std::string exportDir = "./";
+    const std::string packageName = "test_main";
+
+    {
+        auto exportResult = DMA::PlantUML::Creator::getInstance().exportPackageClassDiagram(exportDir, packageName);
+        ASSERT_EQ(exportResult.bIsSuccessful, true);
+        ASSERT_EQ(exportResult.error.empty(), true);
+
+        auto filePath = exportDir + packageName + ".puml";
+        ASSERT_TRUE(checkFile( filePath ));
+        removeFile(filePath);
+    }
+
+    {
+        auto exportResult = DMA::PlantUML::Creator::getInstance().exportPackageClassDiagram(exportDir, packageName, true);
+        ASSERT_EQ(exportResult.bIsSuccessful, true);
+        ASSERT_EQ(exportResult.error.empty(), true);
+
+        auto filePath = exportDir + packageName  + "_standalone" + ".puml";
+        ASSERT_TRUE(checkFile( filePath ));
+        removeFile(filePath);
+    }
+}
+
+TEST_F(Test_CClassUnderTest, test_all_packages_diagram_export)
+{
+    const std::string exportDir = "./";
+
+    {
+        auto exportResult = DMA::PlantUML::Creator::getInstance().exportAllPackageClassDiagrams(exportDir);
+
+        for(const auto& exportItem : exportResult)
+        {
+            auto filePath = exportDir + exportItem.first + ".puml";
+            ASSERT_TRUE(checkFile( filePath ));
+            removeFile(filePath);
+        }
+    }
+
+    {
+        auto exportResult = DMA::PlantUML::Creator::getInstance().exportAllPackageClassDiagrams(exportDir, true);
+
+        for(const auto& exportItem : exportResult)
+        {
+            auto filePath = exportDir + exportItem.first + "_standalone" + ".puml";
+            ASSERT_TRUE(checkFile( filePath ));
+            removeFile(filePath);
+        }
+    }
 }
 
 int main(int argc, char *argv[])

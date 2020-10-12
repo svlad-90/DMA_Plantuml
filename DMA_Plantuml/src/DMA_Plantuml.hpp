@@ -9,7 +9,7 @@
 /**
  *
  * Module:   DMA_Plantuml
- * Version:  1.0.3
+ * Version:  1.0.4
  * Author:   Vladyslav Goncharuk ( svlad1990@gmail.com )
  *
  * ////////////////////////////////////////////////////////////////////////////
@@ -820,7 +820,7 @@ namespace DMA
                 /**
                  * @brief getPackageClassDiagram - gets filtered class diagram of sub-set of the
                  * registered elements
-                 * @param packageName - name of target package, starting from which diagram should
+                 * @param packageName - name of target package, for which the diagram should
                  * be created. Diagram will show target package and first level of its dependencies.
                  * @param excludeDependencies - whether we should represent package WITHOUT its
                  * first level external dependencies
@@ -829,6 +829,69 @@ namespace DMA
                  * Otherwise returns an error message.
                  */
                 tClassDiagramResult getPackageClassDiagram(const std::string& packageName, bool excludeDependencies = false) const;
+
+                typedef std::map<std::string, tClassDiagramResult> tBatchClassDiagramResult;
+
+                /**
+                 * @brief getAllPackageClassDiagrams - gets filtered class diagram of sub-set of the
+                 * registered elements for EACH existing package.
+                 * @param excludeDependencies - whether we should represent package WITHOUT its
+                 * first level external dependencies
+                 * @return - instance of tBatchClassDiagramResult struct, which contains content of
+                 * each generated diagram, in case if tClassDiagramResult::bIsSuccessful == true.
+                 * Otherwise returns an error message for each failed operation.
+                 * Note! This method will proceed on error.
+                 */
+                tBatchClassDiagramResult getAllPackageClassDiagrams(bool excludeDependencies = false) const;
+
+                struct tClassDiagramExportResult
+                {
+                    bool bIsSuccessful = false;
+                    std::string error;
+                };
+
+                /**
+                 * @brief exportClassDiagram - exports full class diagram of all registered
+                 * elements.
+                 * @param exportPath - target export directory path. Should be separated with the
+                 * forward slashes - "/", but WITHOUT forward slash at the end.
+                 * @return - instance of tClassDiagramExportResult struct, which contains the
+                 * status of the operation and ( in case of failure ) the error string.
+                 */
+                tClassDiagramExportResult exportClassDiagram( const std::string& exportPath ) const;
+
+                /**
+                 * @brief exportPackageClassDiagram - exports filtered class diagram of sub-set of
+                 * the registered elements.
+                 * @param exportPath - target export directory path. Should be separated with the
+                 * forward slashes - "/", but WITHOUT forward slash at the end.
+                 * @param packageName - name of target package, for which the diagram should be
+                 * created. Diagram will show target package and first level of its dependencies.
+                 * @param excludeDependencies - whether we should represent package WITHOUT its
+                 * first level external dependencies
+                 * @return - instance of tClassDiagramExportResult struct, which contains the
+                 * status of the operation and ( in case of failure ) the error string.
+                 */
+                tClassDiagramExportResult exportPackageClassDiagram( const std::string& exportPath,
+                                                                     const std::string& packageName,
+                                                                     bool excludeDependencies = false ) const;
+
+                typedef std::map<std::string, tClassDiagramExportResult> tClassDiagramBatchExportResult;
+
+                /**
+                 * @brief exportAllPackageClassDiagrams - exports all package class diagrams to the
+                 * target folder.
+                 * @param exportPath - target export directory path. Should be separated with the
+                 * forward slashes - "/", but WITHOUT forward slash at the end.
+                 * @param excludeDependencies - whether we should represent package WITHOUT its
+                 * first level external dependencies
+                 * @return - instance of tClassDiagramBatchExportResult struct, which contains the
+                 * status of each performed export operation and ( in case of failure ) the error
+                 * string.
+                 * Note! This method will proceed on error.
+                 */
+                tClassDiagramBatchExportResult exportAllPackageClassDiagrams( const std::string& exportPath,
+                                                                     bool excludeDependencies = false ) const;
 
                 /**
                  * @brief findPackagesByName - tries to find package by name.

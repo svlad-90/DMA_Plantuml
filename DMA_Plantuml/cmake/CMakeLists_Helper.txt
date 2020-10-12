@@ -50,6 +50,11 @@ endfunction(sync_g_test_framework)
 # param_1 ... param_n - libraries, which should be linked to a test
 function(add_g_test)
     if (DEFINED ARGV0)
+
+        if(COMMAND cmake_policy)
+          cmake_policy(SET CMP0003 NEW)
+        endif(COMMAND cmake_policy)
+
         add_executable(${ARGV0} ${ARGV0}.cpp)
         target_link_libraries(${ARGV0} gtest_main)
         add_test(NAME ${ARGV0} COMMAND ${ARGV0})
@@ -65,7 +70,7 @@ endfunction(add_g_test)
 ################### GOOGLE TEST ( END ) ###################
 
 ################### CLANG_TIDY ############################
-function(enable_clang_tidy)
+function(add_subdirectory_with_clang_tidy subdirectory)
     if( DMA_CLANG_TIDY_BUILD )
         message("-- [DMA_Plantuml]: clang-tidy build.")
         set(CMAKE_CXX_CLANG_TIDY "clang-tidy")
@@ -73,5 +78,7 @@ function(enable_clang_tidy)
         "-format-style='file'"
         "-warnings-as-errors=*" )
     endif()
-endfunction(enable_clang_tidy)   
+
+    add_subdirectory(${subdirectory})
+endfunction(add_subdirectory_with_clang_tidy)
 ################### CLANG_TIDY ( END ) ####################

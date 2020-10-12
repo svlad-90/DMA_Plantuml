@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <fstream>
 
 #include "DMA_Plantuml.hpp"
 
@@ -836,6 +837,120 @@ namespace DMA
             else
             {
                 result.error.append("Error: package with name \"").append(packageName).append("\" was not found!");
+            }
+
+            return result;
+        }
+
+        Creator::tBatchClassDiagramResult Creator::getAllPackageClassDiagrams(bool excludeDependencies) const
+        {
+            tBatchClassDiagramResult result;
+
+            auto packages = findPackagesByName(""); // locks mutex
+
+            for(const auto& pPackageName : packages)
+            {
+                if(nullptr != pPackageName)
+                {
+                    result[*pPackageName] = getPackageClassDiagram(*pPackageName, excludeDependencies); // locks mutex
+                }
+            }
+
+            return result;
+        }
+
+        Creator::tClassDiagramExportResult Creator::exportClassDiagram( const std::string& exportPath ) const
+        {
+            tClassDiagramExportResult result;
+
+            auto diagramGenerationResult = getClassDiagram(); // locks mutex
+
+            if(true == diagramGenerationResult.bIsSuccessful)
+            {
+                std::ofstream file;
+                std::string filePath = exportPath + "/" + "Full.puml";
+
+                try
+                {
+                    file.open(filePath, std::ios::out | std::ios::trunc);
+
+                    file << diagramGenerationResult.diagramContent;
+                    file.close();
+
+                    result.bIsSuccessful = true;
+                }
+                catch (std::ios_base::failure& e)
+                {
+                    result.error = std::string()
+                            .append("Was not able to write to a file path \": ")
+                            .append(filePath).append("\". Error: ")
+                            .append(e.what());
+                }
+            }
+            else
+            {
+                result.error = std::string().append("Diagram generation error: ").append(diagramGenerationResult.error);
+            }
+
+            return result;
+        }
+
+        Creator::tClassDiagramExportResult Creator::exportPackageClassDiagram( const std::string& exportPath,
+                                                             const std::string& packageName,
+                                                             bool excludeDependencies ) const
+        {
+            tClassDiagramExportResult result;
+
+            auto diagramGenerationResult = getPackageClassDiagram(packageName, excludeDependencies); // locks mutex
+
+            if(true == diagramGenerationResult.bIsSuccessful)
+            {
+                std::ofstream file;
+                const std::string postfix = true == excludeDependencies ? "_standalone" : "";
+                std::string filePath = exportPath + "/" + packageName + postfix + ".puml";
+
+                try
+                {
+                    file.open(filePath, std::ios::out | std::ios::trunc);
+
+                    file << diagramGenerationResult.diagramContent;
+                    file.close();
+
+                    result.bIsSuccessful = true;
+                }
+                catch (std::ios_base::failure& e)
+                {
+                    result.error = std::string()
+                            .append("Was not able to write to a file path \": ")
+                            .append(filePath).append("\". Error: ")
+                            .append(e.what());
+                }
+            }
+            else
+            {
+                result.error = std::string()
+                        .append("Diagram generation error for package \"")
+                        .append(packageName)
+                        .append("\". Error - ")
+                        .append(diagramGenerationResult.error);
+            }
+
+            return result;
+        }
+
+        Creator::tClassDiagramBatchExportResult Creator::exportAllPackageClassDiagrams( const std::string& exportPath,
+                                                             bool excludeDependencies ) const
+        {
+            tClassDiagramBatchExportResult result;
+
+            auto packages = findPackagesByName(""); // locks mutex
+
+            for(const auto& pPackageName : packages)
+            {
+                if(nullptr != pPackageName)
+                {
+                    result[*pPackageName] = exportPackageClassDiagram(exportPath, *pPackageName, excludeDependencies); // locks mutex
+                }
             }
 
             return result;
