@@ -98,6 +98,22 @@ TEST_F(Test_CClassUnderTest, test_package_diagram_excluded_dependencies_non_empt
     ASSERT_EQ(diagramResult.diagramContent.empty(), false);
 }
 
+TEST_F(Test_CClassUnderTest, test_diagram_background_color)
+{
+    PUML_PACKAGE_BEGIN(test_bg_color)
+        PUML_CLASS_BEGIN(FakeClass)
+        PUML_CLASS_END()
+    PUML_PACKAGE_END()
+
+    DMA::PlantUML::Creator::getInstance().setBackgroundColor("#FFFFFF");
+    auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test_bg_color", true);
+    ASSERT_EQ(diagramResult.bIsSuccessful, true);
+    ASSERT_EQ(diagramResult.diagramContent.empty(), false);
+
+    // we should find color
+    ASSERT_NE(diagramResult.diagramContent.find("skinparam backgroundColor #FFFFFF"), std::string::npos);
+}
+
 int main(int argc, char *argv[])
 {
     ::testing::InitGoogleTest(&argc, argv);

@@ -217,7 +217,7 @@ namespace DMA
             return result;
         }
 
-        static std::string getClassDiagramInternal(const tPackageMap& packageMap)
+        static std::string getClassDiagramInternal(const tPackageMap& packageMap, const std::string& backgroundColor)
         {
             std::string diagram;
 
@@ -230,6 +230,13 @@ namespace DMA
 
                 diagram.append("@startuml").append(sNewLine);
                 diagram.append(sNewLine);
+
+                if(false == backgroundColor.empty())
+                {
+                    diagram.append("skinparam backgroundColor ").append(backgroundColor);
+                    diagram.append(sNewLine);
+                }
+
                 diagram.append("skinparam wrapWidth 600").append(sNewLine);
 
                 for(const auto& packagePair : packageMap)
@@ -499,7 +506,7 @@ namespace DMA
 
             std::lock_guard<std::mutex> guard(*const_cast<std::mutex*>(&mDataProtector));
 
-            result.diagramContent = getClassDiagramInternal(mPackageMap);
+            result.diagramContent = getClassDiagramInternal(mPackageMap, mBackgroundColor);
             result.bIsSuccessful = true;
 
             return result;
@@ -823,7 +830,7 @@ namespace DMA
                     }
                 }
 
-                result.diagramContent = getClassDiagramInternal(dumpMap);
+                result.diagramContent = getClassDiagramInternal(dumpMap, mBackgroundColor);
                 result.bIsSuccessful = true;
             }
             else
@@ -903,6 +910,12 @@ namespace DMA
 
                 mItemRegistry[pItemData->getItemName()] = pItemData;
             }
+        }
+
+        void Creator::setBackgroundColor(const std::string& color)
+        {
+            std::lock_guard<std::mutex> guard(*const_cast<std::mutex*>(&mDataProtector));
+            mBackgroundColor = color;
         }
         ////////////////////////////////////////////////////////////////
 
