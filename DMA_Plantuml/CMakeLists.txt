@@ -15,10 +15,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.7 FATAL_ERROR)
 
 sync_g_test_framework()
 
+add_subdirectory_with_clang_tidy(src)
 add_subdirectory(test)
-
-enable_clang_tidy()
-
-add_subdirectory(src)
 ################### PROJECT ( END ) #######################
 
