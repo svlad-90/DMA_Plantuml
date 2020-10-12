@@ -849,6 +849,14 @@ namespace DMA
                  */
                 void addItem( const tItemName& packageName, const tIItemPtr& pItemData );
 
+                /**
+                 * @brief setBackgroundColor - sets background color for generated diagrams
+                 * @param color - the color to be set. Should be in #FFFFFF format. Be aware, that
+                 * internally no validation of the provided argument is done. Thus, improper usage
+                 * might break the diagram's syntax!
+                 */
+                void setBackgroundColor(const std::string& color);
+
             private:
 
                 /**
@@ -861,6 +869,7 @@ namespace DMA
                 tPackageMap mPackageMap;
                 tItemMap mItemRegistry;
                 bool mbIsinitialized;
+                std::string mBackgroundColor; // used if non-empty
                 std::mutex mDataProtector;
         };
 
