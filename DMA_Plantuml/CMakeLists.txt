@@ -3,17 +3,26 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ################### CPP ( END ) ###########################
 
-################### HELPERS ###############################
-include(cmake/CMakeLists_Helper.txt)
-################### HELPERS ( END ) #######################
+CMAKE_MINIMUM_REQUIRED(VERSION 3.14 FATAL_ERROR)
+
+################### COMMON_DEPS ###########################
+include(FetchContent)
+FetchContent_Declare(
+  dma_common_deps
+  GIT_REPOSITORY https://github.com/svlad-90/DMA_CommonDeps.git
+  GIT_TAG        master
+) 
+FetchContent_MakeAvailable(dma_common_deps)
+include(${FETCHCONTENT_BASE_DIR}/dma_common_deps-src/CMakeLists_Helper.txt)
+################### COMMON_DEPS ( END ) ###################
+
+################### DEPENDENCIES ##########################
+sync_g_test_framework(${FETCHCONTENT_BASE_DIR}/dma_common_deps-src)
+################### DEPENDENCIES ( END )###################
 
 ################### PROJECT ###############################
 project (DMA_Plantuml)
 enable_testing()
-
-CMAKE_MINIMUM_REQUIRED(VERSION 3.7 FATAL_ERROR)
-
-sync_g_test_framework()
 
 add_subdirectory_with_clang_tidy(src)
 add_subdirectory(test)
