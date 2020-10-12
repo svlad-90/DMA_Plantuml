@@ -1,0 +1,45 @@
+name: Build clang-tidy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_clang_tidy:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Install clang-tidy
+    - name: Install clang-tidy
+      run: sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install clang-tidy
+      shell: bash
+
+    # Checkout project's revision, which is pushed
+    - name: Checkout of the project
+      uses: actions/checkout@v2
+      with:
+        repository: svlad-90/${{ github.event.repository.name }}
+        path: ./
+        ref: ${{ github.ref }}
+
+    # Create build directory
+    - name: Creation of the "../build" directory
+      run: mkdir ../build
+      shell: bash
+      working-directory: ./
+
+    # CMake execution
+    - name: CMake with clang-tidy
+      run: cmake ../${{ github.event.repository.name }}/DMA_Plantuml -DDMA_CLANG_TIDY_BUILD=true
+      shell: bash
+      working-directory: ../build
+    
+    # Build of the project with proceed on error
+    - name: Make
+      run: make -k -j8
+      shell: bash
+      working-directory: ../build

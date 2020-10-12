@@ -1,4 +1,4 @@
-#include <iostream>
+#include <gtest/gtest.h>
 
 #include "../src/DMA_Plantuml.hpp"
 
@@ -61,51 +61,45 @@ PUML_PACKAGE_BEGIN(test_external)
     PUML_CLASS_END()
 PUML_PACKAGE_END()
 
-int main()
+
+class Test_CClassUnderTest : public ::testing::Test
 {
-    DMA::PlantUML::Creator::getInstance().initialize();
-
+protected:
+    void SetUp()
     {
-        auto diagramResult = DMA::PlantUML::Creator::getInstance().getClassDiagram();
-
-        if(true == diagramResult.bIsSuccessful)
+        if(false == DMA::PlantUML::Creator::getInstance().isInitislized())
         {
-            std::cout << "Diagram 1:" << std::endl;
-            std::cout << diagramResult.diagramContent << std::endl << std::endl;
-        }
-        else
-        {
-            std::cout << diagramResult.error << std::endl;
+            DMA::PlantUML::Creator::getInstance().initialize();
         }
     }
 
-    {
-        auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test_main");
+    void TearDown()
+    {}
+};
 
-        if(true == diagramResult.bIsSuccessful)
-        {
-            std::cout << "Diagram 2:" << std::endl;
-            std::cout << diagramResult.diagramContent << std::endl << std::endl;
-        }
-        else
-        {
-            std::cout << diagramResult.error << std::endl;
-        }
-    }
+TEST_F(Test_CClassUnderTest, test_full_diagram_non_emptiness)
+{
+    auto diagramResult = DMA::PlantUML::Creator::getInstance().getClassDiagram();
+    ASSERT_EQ(diagramResult.bIsSuccessful, true);
+    ASSERT_EQ(diagramResult.diagramContent.empty(), false);
+}
 
-    {
-        auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test_main", true);
+TEST_F(Test_CClassUnderTest, test_package_diagram_non_emptiness)
+{
+    auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test_main");
+    ASSERT_EQ(diagramResult.bIsSuccessful, true);
+    ASSERT_EQ(diagramResult.diagramContent.empty(), false);
+}
 
-        if(true == diagramResult.bIsSuccessful)
-        {
-            std::cout << "Diagram 3:" << std::endl;
-            std::cout << diagramResult.diagramContent << std::endl;
-        }
-        else
-        {
-            std::cout << diagramResult.error << std::endl;
-        }
-    }
+TEST_F(Test_CClassUnderTest, test_package_diagram_excluded_dependencies_non_emptiness)
+{
+    auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test_main", true);
+    ASSERT_EQ(diagramResult.bIsSuccessful, true);
+    ASSERT_EQ(diagramResult.diagramContent.empty(), false);
+}
 
-    return 0;
+int main(int argc, char *argv[])
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
