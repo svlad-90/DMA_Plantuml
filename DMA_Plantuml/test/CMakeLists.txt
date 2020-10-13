@@ -1,2 +1,2 @@
 add_definitions(-DPUML_ENABLED)
-add_g_test(UT_DMA_Plantuml DMA_Plantuml)
+DMA_add_g_test(UT_DMA_Plantuml DMA_Plantuml)

@@ -17,21 +17,18 @@ include(${FETCHCONTENT_BASE_DIR}/dma_common_deps-src/CMakeLists_Helper.txt)
 ################### COMMON_DEPS ( END ) ###################
 
 ################### DEPENDENCIES ##########################
-sync_g_test_framework()
+DMA_sync_g_test_framework()
 ################### DEPENDENCIES ( END )###################
 
 ################### PROJECT ###############################
 project (DMA_Plantuml)
 enable_testing()
 
-if (WIN32)
-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
-endif (WIN32)
+DMA_Prepare()
 
 include_directories(include)
 
-add_subdirectory_with_clang_tidy(src)
+DMA_add_subdirectory_with_clang_tidy(src)
 add_subdirectory(test)
 ################### PROJECT ( END ) #######################
 
