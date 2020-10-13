@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-#include "../src/DMA_Plantuml.hpp"
+#include "DMA_Plantuml.hpp"
 
 PUML_PACKAGE_BEGIN(test_main)
     PUML_INTERFACE_BEGIN(IInterface)

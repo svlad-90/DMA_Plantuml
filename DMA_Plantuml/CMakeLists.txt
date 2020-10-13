@@ -29,6 +29,8 @@ if (WIN32)
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 endif (WIN32)
 
+include_directories(include)
+
 add_subdirectory_with_clang_tidy(src)
 add_subdirectory(test)
 ################### PROJECT ( END ) #######################
