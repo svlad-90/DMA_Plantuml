@@ -565,7 +565,7 @@ DMA::PlantUML::tStringPtrWrapper pPackageName = std::make_shared<std::string>(#P
     #USED_NUMBER,\
     #COMMENT);\
 \
-    pItem->dependencyMap[pDependencyData->getItemName()] = pDependencyData;\
+    pItem->dependencyMap[pDependencyData->name.getItemName()] = pDependencyData;\
 }
 
 #define PUML_USE_DEPENDENCY_CHECKED( ITEM, USING_NUMBER, USED_NUMBER, COMMENT )\
