@@ -7,7 +7,7 @@
 ----
 
 - Module:   DMA_Plantuml
-- Version:  1.0.3
+- Version:  1.0.4
 - Author:   Vladyslav Goncharuk ( svlad1990@gmail.com )
 
 ----
