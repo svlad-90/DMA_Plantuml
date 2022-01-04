@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <fstream>
+#include <cctype>
 
 #include "DMA_Plantuml.hpp"
 
