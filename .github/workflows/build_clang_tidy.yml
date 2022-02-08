@@ -5,6 +5,12 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Target branch'     
+        required: true
+        default: 'master'
 
 jobs:
   build_clang_tidy:
@@ -18,7 +24,7 @@ jobs:
       run: sudo DEBIAN_FRONTEND=noninteractive apt-get -yq install clang-tidy
       shell: bash
 
-    # Checkout project's revision, which is pushed
+    # Checkout the target project's revision
     - name: Checkout of the project
       uses: actions/checkout@v2
       with:
