@@ -67,7 +67,7 @@ jobs:
     #CMake execution
     - name: CMake
       run: |
-        call "%programfiles(x86)%\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsx86_amd64.bat"
+        call "%programfiles(x86)%\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
         cmake ..\${{ github.event.repository.name }}\DMA_Plantuml "-GCodeBlocks - NMake Makefiles JOM" "-DCMAKE_BUILD_TYPE:STRING=Release"
       shell: cmd
       working-directory: ..\build
