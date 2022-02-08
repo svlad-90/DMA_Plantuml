@@ -66,24 +66,24 @@ jobs:
 
     #CMake execution
     - name: CMake
+      uses: ilammy/msvc-dev-cmd@v1
       run: |
-        call "%programfiles(x86)%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         cmake ..\${{ github.event.repository.name }}\DMA_Plantuml "-GCodeBlocks - NMake Makefiles JOM" "-DCMAKE_BUILD_TYPE:STRING=Release"
       shell: cmd
       working-directory: ..\build
     
     # Build of the project
     - name: Jom
+      uses: ilammy/msvc-dev-cmd@v1
       run: |
-        call "%programfiles(x86)%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         jom.exe -j8
       shell: cmd
       working-directory: ..\build
       
     # Unit-tests execution
     - name: unit-tests
-      run: | 
-        call "%programfiles(x86)%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      uses: ilammy/msvc-dev-cmd@v1
+      run: |
         ctest.exe --force-new-ctest-process .\
       shell: cmd
       working-directory: ../build
