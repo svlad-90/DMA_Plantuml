@@ -18,6 +18,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    
+    - uses: ilammy/msvc-dev-cmd@v1
          
     # Creation of the ..\downloads directory
     - name: Creation of the "..\downloads" directory
@@ -66,7 +68,6 @@ jobs:
 
     #CMake execution
     - name: CMake
-      uses: ilammy/msvc-dev-cmd@v1
       run: |
         cmake ..\${{ github.event.repository.name }}\DMA_Plantuml "-GCodeBlocks - NMake Makefiles JOM" "-DCMAKE_BUILD_TYPE:STRING=Release"
       shell: cmd
@@ -74,7 +75,6 @@ jobs:
     
     # Build of the project
     - name: Jom
-      uses: ilammy/msvc-dev-cmd@v1
       run: |
         jom.exe -j8
       shell: cmd
@@ -82,7 +82,6 @@ jobs:
       
     # Unit-tests execution
     - name: unit-tests
-      uses: ilammy/msvc-dev-cmd@v1
       run: |
         ctest.exe --force-new-ctest-process .\
       shell: cmd
