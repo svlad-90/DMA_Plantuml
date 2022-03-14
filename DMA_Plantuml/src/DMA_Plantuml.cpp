@@ -80,7 +80,7 @@ namespace DMA
                     auto& itemNameStr = *itemName.pString;
 
                     auto foundtemplateOpen = itemNameStr.find("<");
-                    auto foundtemplateClose = itemNameStr.find("<");
+                    auto foundtemplateClose = itemNameStr.find(">");
 
                     if(foundtemplateOpen != std::string::npos
                     && foundtemplateClose != std::string::npos)
@@ -290,6 +290,29 @@ namespace DMA
                             }
                         };
 
+                        auto appendMembers = [&diagram](const tMemberMap& memberMap)
+                        {
+                            for(const auto& memberPair : memberMap)
+                            {
+                                const auto& member = memberPair.second;
+
+                                diagram.append(sIndentation).append( getAccessModifier(member.accessModifier) ).append(" ");
+
+                                switch(member.memberType)
+                                {
+                                    case eMemberType::eUsual:
+                                    {
+                                        diagram.append(*member.member.pString).append(sNewLine);
+                                    }
+                                        break;
+                                    case eMemberType::eStatic:
+                                    {
+                                        diagram.append("{static} ").append(*member.member.pString).append(sNewLine);
+                                    }
+                                }
+                            }
+                        };
+
                         for(const auto& itemPair : pPackage->itemMap)
                         {
                             if(nullptr != itemPair.second)
@@ -339,6 +362,7 @@ namespace DMA
                                 diagram.append("{").append(sNewLine);
 
                                 appendMethods(pItem->getMethodMap());
+                                appendMembers(pItem->getMemberMap());
 
                                 diagram.append("}").append(sNewLine);
                                 diagram.append(sNewLine);
@@ -563,6 +587,7 @@ namespace DMA
                         pItemCopied->getParent() = pPackageFiltered;
                         pItemCopied->setItemName( pItem->getItemName() );
                         pItemCopied->getMethodMap() = pItem->getMethodMap();
+                        pItemCopied->getMemberMap() = pItem->getMemberMap();
                         pItemCopied->getDependentMap() = pItem->getDependentMap();
                         pItemCopied->getDependencyMap() = pItem->getDependencyMap();
                         pItemCopied->getInheritanceMap() = pItem->getInheritanceMap();
@@ -690,6 +715,7 @@ namespace DMA
                                     pItemFiltered_->getParent() = pPackage;
                                     pItemFiltered_->setItemName( pToItem->getItemName() );
                                     pItemFiltered_->getMethodMap() = pToItem->getMethodMap();
+                                    pItemFiltered_->getMemberMap() = pToItem->getMemberMap();
 
                                     if(false == excludeDependencies)
                                     {
@@ -1075,6 +1101,11 @@ namespace DMA
             return methodMap;
         }
 
+        tMemberMap& tBaseData::getMemberMap()
+        {
+            return memberMap;
+        }
+
         tInheritanceMap& tBaseData::getInheritanceMap()
         {
             return inheritanceMap;
@@ -1139,6 +1170,20 @@ namespace DMA
         accessModifier(accessModifier_),
         method(tStringPtrWrapper(std::make_shared<std::string>(method_))),
         methodType(methodType_)
+        {}
+
+        tMemberData::tMemberData():
+        accessModifier("+"),
+        member(),
+        memberType(eMemberType::eUsual)
+        {}
+
+        tMemberData::tMemberData(const tAccessModifier& accessModifier_,
+                    const std::string& member_,
+                    const eMemberType& memberType_):
+        accessModifier(accessModifier_),
+        member(tStringPtrWrapper(std::make_shared<std::string>(member_))),
+        memberType(memberType_)
         {}
 
         tDependencyData::tDependencyData():

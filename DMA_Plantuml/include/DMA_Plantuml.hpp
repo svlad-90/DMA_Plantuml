@@ -151,7 +151,7 @@
  * its unique name within a package. In case of multiple definitions of an
  * element the "last win" strategy will be applied. So you can get partial
  * data ☺
- * - both class and interface do have: methods, inheritance and dependencies
+ * - both class and interface do have: members, methods, inheritance and dependencies
  * - All parameters of the macro definitions should be placed without the
  * quotes. Stringification will be done inside the macro definitions
  * - Concept does contain a primitive type check mechanism. Refer to X_CHECKED
@@ -187,38 +187,25 @@
  *
  * //////////////////////////////////////////////////////
  *
- * Step 4. To obtain the full class diagram of your application, do the
- * following thing in your source code:
+ * Step 4. To export the resulting diagramas, do the following thing in your source code:
  *
- *  > auto diagramResult = DMA::PlantUML::Creator::getInstance().getClassDiagram();
- *  >
- *  > if(true == diagramResult.bIsSuccessful)
- *  > {
- *  >     // do something with diagramResult.diagramContent
- *  > }
- *  > else
- *  > {
- *  >     // dump diagramResult.error
- *  > }
+ * > auto result = DMA::PlantUML::Creator::getInstance().exportAllPackageClassDiagrams("/target_folder/", true);
+ * > // Second parameter of the "exportAllPackageClassDiagrams" method specifies whether to exclude package dependencies or not.
+ * > 
+ * > for(const auto& resultItem: result)
+ * > {
+ * >     if(false == resultItem.second.bIsSuccessful)
+ * >     {
+ * >         // log failure
+ * >     }
+ * >     else
+ * >     {
+ * >         // log success
+ * >     }
+ * > }
  * //////////////////////////////////////////////////////
  *
- * Step 5. To obtain partial class diagram of the specific package, do the
- * following thing in your source code:
- *
- * >  auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test");
- * >
- * >  if(true == diagramResult.bIsSuccessful)
- * >  {
- * >      // do something with diagramResult.diagramContent
- * >  }
- * >  else
- * >  {
- * >      // dump diagramResult.error
- * >  }
- *
- * //////////////////////////////////////////////////////
- *
- * Step 6 ( mandatory ). Add the following define to your build:
+ * Step 5 ( mandatory ). Add the following define to your build:
  *
  *  > #define PUML_ENABLED
  *
@@ -362,6 +349,8 @@
 #define PUML_METHOD( ACCESS_MODIFIER, METHOD )
 #define PUML_OVERRIDE_METHOD( ACCESS_MODIFIER, METHOD )
 #define PUML_STATIC_METHOD( ACCESS_MODIFIER, METHOD )
+#define PUML_MEMBER( ACCESS_MODIFIER, MEMBER )
+#define PUML_STATIC_MEMBER( ACCESS_MODIFIER, MEMBER )
 #define PUML_INHERITANCE( BASE_CLASS, COMMENT )
 #define PUML_INHERITANCE_CHECKED( BASE_CLASS, COMMENT )
 #define PUML_COMPOSITION_DEPENDENCY( ITEM, USING_NUMBER, USED_NUMBER, COMMENT )
@@ -482,6 +471,18 @@ DMA::PlantUML::tStringPtrWrapper pPackageName = std::make_shared<std::string>(#P
 {\
     DMA::PlantUML::tMethodData methodData( #ACCESS_MODIFIER, #METHOD, DMA::PlantUML::eMethodType::eStatic );\
     pItem->methodMap[methodData.method] = methodData;\
+}
+
+#define PUML_MEMBER( ACCESS_MODIFIER, MEMBER )\
+{\
+    DMA::PlantUML::tMemberData memberData( #ACCESS_MODIFIER, #MEMBER, DMA::PlantUML::eMemberType::eUsual );\
+    pItem->memberMap[memberData.member] = memberData;\
+}
+
+#define PUML_STATIC_MEMBER( ACCESS_MODIFIER, MEMBER )\
+{\
+    DMA::PlantUML::tMemberData memberData( #ACCESS_MODIFIER, #MEMBER, DMA::PlantUML::eMemberType::eStatic );\
+    pItem->memberMap[memberData.member] = memberData;\
 }
 
 #define PUML_INHERITANCE( BASE_CLASS, COMMENT )\
@@ -692,6 +693,27 @@ namespace DMA
 
         typedef std::map<tMethod, tMethodData> tMethodMap;
 
+        typedef tStringPtrWrapper tMember;
+
+        enum class eMemberType
+        {
+            eUsual = 0,
+            eStatic
+        };
+
+        struct tMemberData
+        {
+            tMemberData();
+            tMemberData(const tAccessModifier& accessModifier_,
+                        const std::string& member_,
+                        const eMemberType& memberType_);
+            tAccessModifier accessModifier;
+            tMember member;
+            eMemberType memberType;
+        };
+
+        typedef std::map<tMember, tMemberData> tMemberMap;
+
         enum class eItemType
         {
             eInterface = 0,
@@ -714,6 +736,7 @@ namespace DMA
             virtual tInheritanceMap& getInheritanceFromMeMap() = 0;
             virtual tPackageDataWeakPtr& getParent() = 0;
             virtual tMethodMap& getMethodMap() = 0;
+            virtual tMemberMap& getMemberMap() = 0;
         };
 
         struct tBaseData : public IItem
@@ -727,9 +750,11 @@ namespace DMA
             virtual tDependencyMap& getDependentMap() override;
             virtual tPackageDataWeakPtr& getParent() override;
             virtual tMethodMap& getMethodMap() override;
+            virtual tMemberMap& getMemberMap() override;
 
             tName name;
             tMethodMap methodMap;
+            tMemberMap memberMap;
             tDependencyMap dependencyMap;
             tDependencyMap dependentMap;
             tPackageDataWeakPtr pParent;
