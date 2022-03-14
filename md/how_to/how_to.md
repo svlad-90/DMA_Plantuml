@@ -86,7 +86,7 @@ classes and interfaces. There should be only one definition of entity with
 its unique name within a package. In case of multiple definitions of an
 element the "last win" strategy will be applied. So you can get partial
 data ☺
-- both class and interface do have: methods, inheritance and dependencies
+- both class and interface do have: members, methods, inheritance and dependencies
 - All parameters of the macro definitions should be placed without the
 quotes. Stringification will be done inside the macro definitions
 - Concept does contain a primitive type check mechanism. Refer to X_CHECKED
@@ -123,34 +123,23 @@ That will finish initialization of the model.
 ### Step 4. To obtain the full class diagram of your application, do the following thing in your source code:
 
 ```
-auto diagramResult = DMA::PlantUML::Creator::getInstance().getClassDiagram();
+auto result = DMA::PlantUML::Creator::getInstance().exportAllPackageClassDiagrams("/target_folder/", true);
+// Second parameter of the "exportAllPackageClassDiagrams" method specifies whether to exclude package dependencies or not.
 
-if(true == diagramResult.bIsSuccessful)
+for(const auto& resultItem: result)
 {
-    // do something with diagramResult.diagramContent
-}
-else
-{
-    // dump diagramResult.error
-}
-```
-
-### Step 5. To obtain partial class diagram of the specific package, do the following thing in your source code:
-
-```
-auto diagramResult = DMA::PlantUML::Creator::getInstance().getPackageClassDiagram("test");
-
-if(true == diagramResult.bIsSuccessful)
-{
-    // do something with diagramResult.diagramContent
-}
-else
-{
-    // dump diagramResult.error
+    if(false == resultItem.second.bIsSuccessful)
+    {
+         // log failure
+    }
+    else
+    {
+        // log success
+    }
 }
 ```
 
-### Step 6 ( mandatory ). Add the following define to your build:
+### Step 5 ( mandatory ). Add the following define to your build:
 
 > PUML_ENABLED
 
