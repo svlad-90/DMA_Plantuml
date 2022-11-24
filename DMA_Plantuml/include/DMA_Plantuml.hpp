@@ -19,7 +19,7 @@
  * Where am I?
  *
  * You are inside the header of the DMA_Plantuml concept - the poor man's C++
- * to platuml converter
+ * to plantuml converter
  *
  * What it does? It allows you to declare a metadata for your classes, which is
  * then allows your application to produce plantuml class diagrams regarding
